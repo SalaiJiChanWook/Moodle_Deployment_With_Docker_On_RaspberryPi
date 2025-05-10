@@ -2,7 +2,8 @@
 ## Casue, we need to upgrade and update the flexiable and compactable moodle site in run time, 
 `The project reduce the hardware resources from moodle sites by controlling the docker`
 
-
+>>>
+>>>
 `/moodle-setup/`
 ` ── moodle1/`
 `│   ├── docker-compose.yml`
