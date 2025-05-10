@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  moodle-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass2
+      MYSQL_DATABASE: moodle2
+      MYSQL_USER: moodleAdmin2
+      MYSQL_PASSWORD: AdminPa$$2
+    volumes:
+      - ./db-data:/var/lib/mysql
+    restart: always
+
+  moodle-app:
+    image: bitnami/moodle:latest
+    depends_on:
+      - moodle-db
+    ports:
+      - "8081:8080"  # Moodle2 on port 8081
+    environment:
+      MOODLE_DATABASE_HOST: moodle-db
+      MOODLE_DATABASE_USER: moodleAdmin2
+      MOODLE_DATABASE_PASSWORD: AdminPa$$2
+      MOODLE_DATABASE_NAME: moodle2
+    volumes:
+      - ./moodledata:/bitnami/moodle
+    restart: always

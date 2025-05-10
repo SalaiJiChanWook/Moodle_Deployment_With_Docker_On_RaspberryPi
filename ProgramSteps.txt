@@ -1,0 +1,42 @@
+#Requirements
+>> Raspberry Pi (Raspberry Pi OS installed)
+
+>> Docker & Docker Compose installed
+
+>> LAN Network (Clients must be on the same network)
+
+>> Basic Linux & Docker knowledge
+
+##Step 1
+>>> 1. Install Docker & Docker Compose on Raspberry Pi
+>> Run these commands: "./InstallDocker and Docker compose in Rpi.sh"
+
+##Step 2
+>>>  Create a Docker-Compose File for Moodle (LAMP Stack)
+>> Run: "Docker-ComposeForMoodleOne.yaml" "Docker-ComposeForMoodleTwo.yaml"
+
+##Step 3
+>>> Deploy Moodle Instances
+>> Run: "PortForMdlOne.sh" "PortForMdlTwo.sh"
+
+##Step 4
+>>> Access Moodle from LAN
+>> Run: "hostname -I"
+
+>>> Current URL -> Access Moodle from another device in the same LAN:
+
+>>    Moodle1: http://<RASPBERRY_PI_IP>:8080
+
+>>    Moodle2: http://<RASPBERRY_PI_IP>:8081
+
+##Step 5
+>>> 5. (Optional) Configure Nginx as Reverse Proxy (Better URLs)
+    Run: "InstallNginx.sh"
+    Add: "Add.sh"
+    Run: "RunNginx.sh"
+
+
+Note:-> Access address> http://<RASPBERRY_PI_IP>/moodle1
+
+Note:-> Access address> http://<RASPBERRY_PI_IP>/moodle2
+

@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name _;
+
+    location /moodle1 {
+        proxy_pass http://localhost:8080;
+    }
+
+    location /moodle2 {
+        proxy_pass http://localhost:8081;
+    }
+}
